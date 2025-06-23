@@ -1,0 +1,263 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  background-image: url('../img/after-sunset-minimal-2024-4k-3840x2160_1705278513-2048x1152.jpg');
+  color: white;
+  background-size: cover;
+  background-position: center;
+
+}
+
+.sidebar {
+  width: 220px;
+  background-color: #1e1e2f;
+  padding: 20px;
+  height: 100vh;
+}
+
+.sidebar h2 {
+  color: #3ebbb1;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  padding: 15px 10px;
+  margin: 10px 0;
+  cursor: pointer;
+  color: #bbb;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.sidebar ul li.active,
+.sidebar ul li:hover {
+  background-color: #5aa8a2;
+  color: white;
+}
+
+.main {
+  flex: 1;
+  padding: 20px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+header input {
+  padding: 8px 12px;
+  width: 300px;
+  border-radius: 5px;
+  border: none;
+}
+
+.perfil {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cards {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background-color: #1e1e2f;
+  padding: 20px;
+  flex: 1;
+  min-width: 200px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #00000050;
+}
+
+.card p {
+  margin: 0;
+  color: #aaa;
+}
+
+.card h3 {
+  margin: 10px 0 0;
+  font-size: 24px;
+  color: #1fe4d4;
+}
+
+.graficos {
+  margin-top: 30px;
+  background-color: #1e1e2f;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* Contenedor general tipo columnas */
+.contenido-productos {
+  display: flex;
+  margin-left: 50px; /* mismo ancho que el sidebar */
+  gap: 40px;
+  padding: 20px 40px;
+  align-items: flex-start;
+  width: calc(100% - 220px); /* para que el contenedor use todo el ancho disponible */
+}
+
+/* Columna izquierda: formulario */
+.formulario-col {
+  background-color: #1c1c1c;
+  padding: 30px;
+  border-radius: 10px;
+  width: 350px;
+  box-shadow: 0 0 10px rgba(255,255,255,0.1);
+  margin: 10px auto;
+  color: white;
+  flex: 1;
+}
+
+.formulario-col label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.formulario-col input,
+.formulario-col select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: none;
+  border-radius: 5px;
+  background-color: #2a2a2a;
+  color: #fff;
+}
+
+.formulario-col button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #228822;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Columna derecha: tabla */
+.tabla-col {
+  flex: 3;
+  width: 100%;
+  overflow-x: auto;
+}
+
+
+/* Estilo tabla similar al que mostraste */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #1a1a1a;
+  color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+table thead {
+  background-color: #343a40;
+}
+
+table th, table td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #444;
+}
+
+table tr:hover {
+  background-color: #2a2a2a;
+}
+
+table button {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  font-size: 13px;
+  cursor: pointer;
+  color: white;
+}
+
+button.eliminar {
+  background-color: #e63946;
+}
+
+button.eliminar:hover {
+  background-color: #c5303d;
+}
+
+button.editar {
+  background-color: #007bff;
+  margin-left: 5px;
+}
+
+button.editar:hover {
+  background-color: #0069d9;
+}
+
+/* === FORMULARIO EDICIÓN (pantalla completa) === */
+.formulario-editar {
+  background-color: #1c1c1c;
+  padding: 30px;
+  border-radius: 10px;
+  width: 350px;
+  box-shadow: 0 0 10px rgba(255,255,255,0.1);
+  margin: 80px auto;
+  color: white;
+}
+
+.formulario-editar h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 22px;
+}
+
+.formulario-editar label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.formulario-editar input,
+.formulario-editar select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: none;
+  border-radius: 5px;
+  background-color: #2a2a2a;
+  color: #fff;
+}
+
+.formulario-editar button {
+  margin-top: 20px;
+  width: 100%;
+  padding: 10px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.formulario-editar button:hover {
+  background-color: #218838;
+}
+
+body.editar-body {
+  background-color: #0e0e0e;
+  font-family: Arial, sans-serif;
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard Botillería</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/estilos.css" />
+</head>
+<body>
+  <div class="sidebar">
+    <h2><i class="fa-solid fa-wine-bottle"></i> Botillería</h2>
+    <ul>
+      <li class="active"><i class="fa-solid fa-chart-line"></i> Dashboard</li>
+      <li><i class="fa-solid fa-boxes-stacked"></i> Productos</li>
+      <li><i class="fa-solid fa-cash-register"></i> Ventas</li>
+      <li><i class="fa-solid fa-right-from-bracket"></i> Salir</li>
+    </ul>
+  </div>
+
+  <div class="main">
+    <header>
+      <input type="text" placeholder="Buscar..." />
+      <div class="perfil"><i class="fa-solid fa-user-circle"></i> Admin</div>
+    </header>
+
+    <section class="cards">
+      <div class="card">
+        <p>Ventas Hoy</p>
+        <h3>$1234</h3>
+      </div>
+      <div class="card">
+        <p>Total Ventas</p>
+        <h3>$45678</h3>
+      </div>
+      <div class="card">
+        <p>Productos en Stock</p>
+        <h3>128</h3>
+      </div>
+      <div class="card">
+        <p>Stock Crítico</p>
+        <h3>5</h3>
+      </div>
+    </section>
+
+    <section class="graficos">
+      <canvas id="graficoVentas"></canvas>
+    </section>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="/js/scripts.js"></script>
+</body>
+</html>
