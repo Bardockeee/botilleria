@@ -4,23 +4,24 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dashboard Botillería</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <link rel="stylesheet" href="css/estilos.css" />
 </head>
 <body>
+
   <div class="sidebar">
     <h2><i class="fa-solid fa-wine-bottle"></i> Botillería</h2>
     <ul>
-      <li class="active"><i class="fa-solid fa-chart-line"></i> Dashboard</li>
-      <li><i class="fa-solid fa-boxes-stacked"></i> Productos</li>
-      <li><i class="fa-solid fa-cash-register"></i> Ventas</li>
-      <li><i class="fa-solid fa-right-from-bracket"></i> Salir</li>
+      <a href="dashboard.html" class="sidebar-link active"><li><i class="fa-solid fa-chart-line"></i> Dashboard</li></a>
+      <a href="productos.php" class="sidebar-link"><li><i class="fa-solid fa-boxes-stacked"></i> Productos</li></a>
+      <a href="ventas.php" class="sidebar-link"><li><i class="fa-solid fa-cash-register"></i> Ventas</li></a>
+      <a href="#" class="sidebar-link"><li><i class="fa-solid fa-right-from-bracket"></i> Salir</li></a>
     </ul>
   </div>
 
   <div class="main">
     <header>
-      <input type="text" placeholder="Buscar..." />
+      <input type="text" placeholder="Buscar...">
       <div class="perfil"><i class="fa-solid fa-user-circle"></i> Admin</div>
     </header>
 
@@ -49,6 +50,6 @@
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="/js/scripts.js"></script>
+  <script src="js/scripts.js"></script>
 </body>
 </html>

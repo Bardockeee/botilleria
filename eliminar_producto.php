@@ -4,20 +4,38 @@ use PhpOffice\PhpSpreadsheet\IOFactory;
 
 $archivoExcel = 'productos.xlsx';
 
-if (isset($_POST['fila'])) {
-    $fila = (int) $_POST['fila'];
+// Paso 1: Validar que vengan los datos
+$filaEliminar = isset($_POST['fila']) ? intval($_POST['fila']) : 0;
+$categoria = $_POST['categoria'] ?? '';
 
-    if (file_exists($archivoExcel)) {
-        $spreadsheet = IOFactory::load($archivoExcel);
-        $sheet = $spreadsheet->getActiveSheet();
-
-        // Elimina la fila (+1 porque empieza en 1)
-        $sheet->removeRow($fila + 1);
-
-        $writer = IOFactory::createWriter($spreadsheet, 'Xlsx');
-        $writer->save($archivoExcel);
-    }
+if ($filaEliminar < 2 || empty($categoria)) {
+    echo "<p>Error: Fila inválida ($filaEliminar) o categoría no especificada ($categoria).</p>";
+    exit;
 }
 
-header("Location: productos.php");
+// Paso 2: Verificar que el archivo existe
+if (!file_exists($archivoExcel)) {
+    echo "<p>Error: No existe el archivo Excel.</p>";
+    exit;
+}
+
+// Paso 3: Cargar el Excel y la hoja
+$documento = IOFactory::load($archivoExcel);
+$hoja = $documento->getSheetByName($categoria);
+
+if (!$hoja) {
+    echo "<p>Error: No se encontró la hoja '$categoria'.</p>";
+    exit;
+}
+
+// Paso 4: Eliminar la fila
+$hoja->removeRow($filaEliminar, 1);
+
+// Paso 5: Guardar cambios
+$writer = IOFactory::createWriter($documento, 'Xlsx');
+$writer->save($archivoExcel);
+
+// Paso 6: Redirigir de vuelta a productos.php
+header("Location: productos.php?categoria=" . urlencode($categoria));
 exit;
+
